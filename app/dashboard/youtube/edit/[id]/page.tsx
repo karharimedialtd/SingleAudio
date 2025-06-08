@@ -665,7 +665,7 @@ export default function YouTubeEditPage() {
         </DialogContent>
       </Dialog>
 
-            {/* Schedule Confirmation Dialog */}
+            {/* Schedule Dialog */}
       <Dialog open={showScheduleDialog} onOpenChange={setShowScheduleDialog}>
         <DialogContent className="bg-gray-800 border-gray-700">
           <DialogHeader>
@@ -681,9 +681,15 @@ export default function YouTubeEditPage() {
             <Button onClick={handleSchedule} disabled={saving}>
               {saving ? "Scheduling..." : "Schedule Video"}
             </Button>
-      </DialogFooter>
-    </DialogContent>
-  </Dialog>
-</div>
-)
+          </DialogFooter>
+        </DialogContent>
+      </Dialog>
+    </div>
+  )
 }
+// Note: This code is a simplified version of a YouTube video edit page using React and Next.js.
+// In a real application, you would replace the mock data and API calls with actual data fetching and state management logic.
+// The UI components are styled using Tailwind CSS and custom components from a UI library.
+// Make sure to handle errors and edge cases in a production application.
+// Also, consider adding more features like video upload, thumbnail management, and more detailed analytics.
+// This code is meant to be a starting point and can be extended with more functionality as needed.
