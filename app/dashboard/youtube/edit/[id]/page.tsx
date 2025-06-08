@@ -681,9 +681,9 @@ export default function YouTubeEditPage() {
             <Button onClick={handleSchedule} disabled={saving}>
               {saving ? "Scheduling..." : "Schedule Video"}
             </Button>
-          </DialogFooter>
-        </DialogContent>
-      </Dialog>
-    </div>
-  )
+      </DialogFooter>
+    </DialogContent>
+  </Dialog>
+</div>
+)
 }
