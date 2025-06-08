@@ -665,7 +665,7 @@ export default function YouTubeEditPage() {
         </DialogContent>
       </Dialog>
 
-      {/* Schedule Confirmation Dialog */}
+            {/* Schedule Confirmation Dialog */}
       <Dialog open={showScheduleDialog} onOpenChange={setShowScheduleDialog}>
         <DialogContent className="bg-gray-800 border-gray-700">
           <DialogHeader>
@@ -682,7 +682,7 @@ export default function YouTubeEditPage() {
               {saving ? "Scheduling..." : "Schedule Video"}
             </Button>
           </DialogFooter>
-        </DialogFooter>
+        </DialogContent>
       </Dialog>
     </div>
   )
