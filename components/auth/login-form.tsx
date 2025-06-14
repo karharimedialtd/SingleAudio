@@ -49,11 +49,12 @@ export function LoginForm() {
     <div className="space-y-6">
       {/* Logo - Replace with Single Audio logo */}
       <div className="flex items-center space-x-2">
-        <div className="w-8 h-8 bg-gradient-to-br from-blue-500 to-purple-600 rounded-lg flex items-center justify-center">
-          {/* TODO: Replace with Single Audio logo */}
-          <span className="text-white font-bold text-sm">SA</span>
-        </div>
-        <span className="font-semibold text-blue-600">Single Audio</span>
+        <img
+    src="/logo.svg"
+    alt="Single Audio Logo"
+    className="w-8 h-8 rounded-lg object-cover"
+  />
+  <span className="font-semibold text-blue-600">Single Audio</span>
       </div>
 
       <div className="space-y-2">
