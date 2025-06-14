@@ -50,7 +50,7 @@ export function LoginForm() {
       {/* Logo - Replace with Single Audio logo */}
       <div className="flex items-center space-x-2">
         <img
-    src="/logo.svg"
+    src="/placeholder-logo.png"
     alt="Single Audio Logo"
     className="w-8 h-8 rounded-lg object-cover"
   />
