@@ -56,15 +56,13 @@ export function RequestAccessForm() {
   if (submitted) {
     return (
       <div className="space-y-6">
-        {/* Logo - Replace with Single Audio logo */}
-      <div className="flex items-center space-x-2">
-        <img
-    src="/logo.svg"
-    alt="Single Audio Logo"
-    className="w-8 h-8 rounded-lg object-cover"
-  />
-  <span className="font-semibold text-blue-600">Single Audio</span>
-      </div>
+        {/* Logo */}
+        <div className="flex items-center space-x-2">
+          <div className="w-8 h-8 bg-gradient-to-br from-blue-500 to-purple-600 rounded-lg flex items-center justify-center">
+            <span className="text-white font-bold text-sm">SA</span>
+          </div>
+          <span className="font-semibold text-blue-600">Single Audio</span>
+        </div>
 
         <div className="text-center space-y-6">
           <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto">
