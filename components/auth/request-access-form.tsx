@@ -59,7 +59,7 @@ export function RequestAccessForm() {
         {/* Logo */}
         <div className="flex items-center space-x-2">
           <div className="w-8 h-8 bg-gradient-to-br from-blue-500 to-purple-600 rounded-lg flex items-center justify-center">
-            <span className="text-white font-bold text-sm">SA</span>
+            <img src="/logo.png" alt="Single Audio" className="w-8 h-8 object-contain" />
           </div>
           <span className="font-semibold text-blue-600">Single Audio</span>
         </div>
