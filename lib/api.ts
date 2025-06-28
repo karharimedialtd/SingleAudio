@@ -1,10 +1,11 @@
-// lib/api.ts
+const API_BASE_URL = "https://backend-vkbo.onrender.com/api"; // auto-prefix /api
 
 export const fetchWithToken = async (
-  url: string,
+  path: string,
   options: RequestInit = {},
   token?: string
 ) => {
+  const url = `${API_BASE_URL}${path}`;
   const headers = new Headers(options.headers || {});
 
   if (token) {
@@ -16,25 +17,26 @@ export const fetchWithToken = async (
     headers,
   });
 
+  const data = await response.json().catch(() => ({}));
+
   if (!response.ok) {
-    const errorData = await response.json().catch(() => ({}));
-    throw new Error(errorData.message || "Request failed");
+    throw new Error(data.message || "Request failed");
   }
 
-  return response.json();
+  return data;
 };
 
-export const getData = async (url: string, token?: string) => {
-  return fetchWithToken(url, { method: "GET" }, token);
+export const getData = async (path: string, token?: string) => {
+  return fetchWithToken(path, { method: "GET" }, token);
 };
 
 export const postData = async (
-  url: string,
+  path: string,
   data: Record<string, any>,
   token?: string
 ) => {
   return fetchWithToken(
-    url,
+    path,
     {
       method: "POST",
       body: JSON.stringify(data),
@@ -47,12 +49,12 @@ export const postData = async (
 };
 
 export const putData = async (
-  url: string,
+  path: string,
   data: Record<string, any>,
   token?: string
 ) => {
   return fetchWithToken(
-    url,
+    path,
     {
       method: "PUT",
       body: JSON.stringify(data),
@@ -64,6 +66,6 @@ export const putData = async (
   );
 };
 
-export const deleteData = async (url: string, token?: string) => {
-  return fetchWithToken(url, { method: "DELETE" }, token);
+export const deleteData = async (path: string, token?: string) => {
+  return fetchWithToken(path, { method: "DELETE" }, token);
 };
