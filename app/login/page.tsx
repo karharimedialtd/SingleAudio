@@ -1,19 +1,21 @@
+"use client"
+
 import { LoginForm } from "@/components/auth/login-form"
 
 export default function LoginPage() {
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-50">
       <div className="w-full max-w-6xl bg-white rounded-xl shadow-lg overflow-hidden flex">
-        {/* Left side - Login form */}
+        {/* Left Side - Login Form */}
         <div className="w-full md:w-1/2 p-8 md:p-12">
           <LoginForm />
         </div>
 
-        {/* Right side - Dashboard preview */}
+        {/* Right Side - Dashboard Preview */}
         <div className="hidden md:block w-1/2 bg-blue-50 p-8 relative">
           <div className="rounded-xl bg-white p-6 shadow-sm">
             <div className="space-y-6">
-              {/* Revenue section */}
+              {/* Revenue Overview */}
               <div className="flex items-start justify-between">
                 <div>
                   <p className="text-sm text-gray-500">Total revenue</p>
@@ -32,7 +34,7 @@ export default function LoginPage() {
                 </div>
               </div>
 
-              {/* Chart and legend */}
+              {/* Chart + Legend */}
               <div className="flex">
                 <div className="w-32 h-32">
                   <svg viewBox="0 0 100 100" className="w-full h-full">
@@ -69,7 +71,7 @@ export default function LoginPage() {
                 </div>
               </div>
 
-              {/* User notifications */}
+              {/* Notifications Preview */}
               <div className="space-y-3">
                 <div className="flex items-center space-x-3">
                   <div className="w-8 h-8 rounded-full bg-gray-200 overflow-hidden">
@@ -95,7 +97,7 @@ export default function LoginPage() {
             </div>
           </div>
 
-          {/* 3D geometric element */}
+          {/* Background 3D Elements */}
           <div className="absolute bottom-0 right-0 w-3/4 h-1/2">
             <div className="w-full h-full bg-gradient-to-br from-blue-100 to-blue-50 rounded-tl-3xl transform rotate-6 translate-y-8 translate-x-4"></div>
             <div className="absolute bottom-8 right-8 w-3/4 h-3/4 bg-gradient-to-br from-blue-200 to-blue-100 rounded-tl-3xl transform -rotate-6"></div>
