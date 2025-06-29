@@ -3,7 +3,7 @@
 import type React from "react"
 import { createContext, useContext, useEffect, useState } from "react"
 import { useRouter } from "next/navigation"
-import { post } from "@/lib/api"
+import { postData } from "@/lib/api" // ✅ FIXED import
 import type { APIResponse, User } from "@/types"
 
 interface AuthContextType {
@@ -32,7 +32,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
         const token = localStorage.getItem("auth_token")
         if (!token) return
 
-        const res: APIResponse<{ user: User }> = await post("/auth/verify-token", { token })
+        const res: APIResponse<{ user: User }> = await postData("/auth/verify-token", { token }) // ✅ FIXED
         if (res.success && res.data?.user) {
           setUser(res.data.user)
         } else {
@@ -51,11 +51,11 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     try {
       setLoading(true)
 
-      const res: APIResponse<{ user: User; token: string }> = await post("/auth/login", {
+      const res: APIResponse<{ user: User; token: string }> = await postData("/auth/login", {
         email,
         password,
         twoFactorCode,
-      })
+      }) // ✅ FIXED
 
       if (!res.success || !res.data) return false
 
@@ -92,7 +92,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
 
   const requestAccess = async (data: any): Promise<boolean> => {
     try {
-      const res: APIResponse = await post("/auth/request-access", data)
+      const res: APIResponse = await postData("/auth/request-access", data) // ✅ FIXED
       return res.success
     } catch (error) {
       console.error("Access request failed:", error)
